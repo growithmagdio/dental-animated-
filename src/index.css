@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #4FB8C9;
+    --color-primary-hover: #3ca3b4;
+    --color-navy: #1E3A5F;
+    --color-navy-light: #2c5282;
+    --color-bg-soft: #F4F9FB;
+    --color-cream: #F3ECE4;
+    --color-text: #4A5568;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg-soft);
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+/* Custom Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 30px rgba(30, 58, 95, 0.06);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #1E3A5F 0%, #4FB8C9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background-color: #4FB8C9;
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(79, 184, 201, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: #3ca3b4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 184, 201, 0.45);
+}
+
+.btn-secondary {
+  background-color: #1E3A5F;
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(30, 58, 95, 0.25);
+}
+
+.btn-secondary:hover {
+  background-color: #152b47;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.35);
+}
+
+.btn-outline {
+  border: 1.5px solid #4FB8C9;
+  color: #1E3A5F;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline:hover {
+  background-color: #4FB8C9;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(79, 184, 201, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(79, 184, 201, 0);
+  }
+}
+
+.pulse-whatsapp {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Hide scrollbar for clean horizontal scroller if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
