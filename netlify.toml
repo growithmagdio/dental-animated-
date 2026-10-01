@@ -3,5 +3,5 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20.18.0"
-  NPM_FLAGS = "--version"
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
